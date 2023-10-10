@@ -1,0 +1,11 @@
+.nav-bar{
+    width: 100px;
+    background-color: #f3941e;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+}
+.box-logo{
+    margin-top: 5rem;
+    padding: 5px;
+}
