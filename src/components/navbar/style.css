@@ -2,8 +2,9 @@
     width: 100px;
     background-color: #f3941e;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     left: 0;
+    z-index: 2;
 }
 .box-logo{
     margin-top: 5rem;
