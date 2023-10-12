@@ -1,4 +1,4 @@
-name: Deploy to Google Cloud Storage
+name: Deploy to Google Cloud Storage bucket sadimorishita
 
 on:
   push:
