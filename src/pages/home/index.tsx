@@ -5,6 +5,7 @@ import './style.css'
 import { useState } from 'react'
 import { Content } from 'antd/es/layout/layout'
 import Titles from '../../components/titles'
+import StatistcsComponent from '../../components/statistcs'
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,6 +28,8 @@ export default function Home() {
         </Content>
       </Row>
       <Titles text={'em números'} sizeImage='120px'></Titles>
+      <StatistcsComponent></StatistcsComponent>
+      <Titles text={'Nossas'} textExtra={'Soluções'} color='#F3941E' sizeImage='0px'></Titles>
     </div>
   )
 }

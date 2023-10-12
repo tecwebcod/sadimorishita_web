@@ -1,0 +1,15 @@
+.container-statistcs {
+    width: calc(100% - 100px);
+    margin: 20px 0 20px 100px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#before::after {
+    content: '';
+    width: 320px;
+    height: 5px;
+    background-color: #F3941E;
+    margin-top: 15px;
+}
