@@ -1,15 +1,89 @@
 .container-statistcs {
     width: calc(100% - 100px);
-    margin: 20px 0 20px 100px;
+    margin: 40px 0 40px 100px;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 100px;
+    position: relative;
+    align-items: center;
 }
 
-#before::after {
+.after::after {
     content: '';
     width: 320px;
     height: 5px;
     background-color: #F3941E;
     margin-top: 15px;
+    scale: 1;
+    transition: scale 0.3s ease;
+    transform-origin: left;
+}
+
+.after:hover::after {
+    scale: 0;
+}
+
+.after:nth-child(1) {
+    position: absolute;
+    left: 20rem;
+    animation: showRight 2s ease;
+}
+
+@keyframes showRight {
+    0% {
+        opacity: 0;
+        margin-left: -7rem;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+
+.after:nth-child(2) {
+    position: absolute;
+    animation: showTop 2s ease;
+}
+
+@keyframes showTop {
+    0% {
+        opacity: 0;
+        margin-top: -7rem;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.after:nth-child(3) {
+    position: absolute;
+    animation: showLeft 2s ease;
+    right: 20rem;
+}
+
+@keyframes showLeft {
+    0% {
+        opacity: 0;
+        margin-right: -7rem;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+        margin-right: 0;
+    }
 }

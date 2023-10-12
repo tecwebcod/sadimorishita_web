@@ -1,10 +1,21 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", Sans-serif;
 }
 
-button{
+button {
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  background: none;
+  width: 10px !important;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: #F3941E;
 }
