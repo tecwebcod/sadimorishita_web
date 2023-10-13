@@ -32,7 +32,7 @@ export default function StatistcsComponent() {
             } else {
                 clearInterval(interval);
             }
-        }, 20);
+        }, 500);
 
         const interval2 = setInterval(() => {
             if (counter2 <= 302) {
@@ -51,7 +51,7 @@ export default function StatistcsComponent() {
                 clearInterval(interval);
             }
 
-        }, 20)
+        }, 500)
         return () => {
             clearInterval(interval);
             clearInterval(interval2);
