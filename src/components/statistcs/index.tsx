@@ -3,8 +3,7 @@ import './style.css'
 import { FaClipboardList } from 'react-icons/fa'
 import { PiUsersThreeFill } from 'react-icons/pi'
 import { FaCalendarDays } from 'react-icons/fa6'
-import { useEffect, useState } from 'react'
-import ScrollRevel from 'scrollreveal'
+import { useEffect, useRef, useState } from 'react'
 
 
 export default function StatistcsComponent() {
@@ -12,18 +11,34 @@ export default function StatistcsComponent() {
     const [clients, setClients] = useState(0)
     const [history, setHistory] = useState(0)
 
+    const ref = useRef<HTMLDivElement | null>(null)
+
 
     useEffect(() => {
         let counter1 = 0;
         let counter2 = 0;
         let counter3 = 0;
-        ScrollRevel().reveal('.container-statistcs', {
-            delay: 100, reset: true, afterReset: () => {
-                counter1 = 0
-                counter2 = 0
-                counter3 = 0
-            },
-        })
+   
+
+        const onScroll = () => {
+            if (!ref.current) {
+                return
+            }
+            const top = ref.current.getBoundingClientRect().top;
+            const bottom = ref.current.getBoundingClientRect().bottom;
+
+            if ((top <= window.innerHeight && top >= 0) || (bottom <= window.innerHeight && bottom >= 0)) {
+                document.querySelectorAll('.after')[0]?.classList.add('activeAnimation')
+                document.querySelectorAll('.after')[1]?.classList.add('activeAnimation')
+                document.querySelectorAll('.after')[2]?.classList.add('activeAnimation')
+            } else {
+                document.querySelectorAll('.after')[0]?.classList.remove('activeAnimation')
+                document.querySelectorAll('.after')[1]?.classList.remove('activeAnimation')
+                document.querySelectorAll('.after')[2]?.classList.remove('activeAnimation')
+            }
+        };
+        window.addEventListener('scroll', onScroll);
+
 
         const interval = setInterval(() => {
             if (counter1 <= 14) {
@@ -39,7 +54,7 @@ export default function StatistcsComponent() {
                 setClients(counter2);
                 counter2++;
             } else {
-                clearInterval(interval);
+                clearInterval(interval2);
             }
 
         }, 20)
@@ -48,11 +63,12 @@ export default function StatistcsComponent() {
                 setHistory(counter3);
                 counter3++;
             } else {
-                clearInterval(interval);
+                clearInterval(interval3);
             }
 
         }, 500)
         return () => {
+            window.removeEventListener('scroll', onScroll)
             clearInterval(interval);
             clearInterval(interval2);
             clearInterval(interval3);
@@ -61,7 +77,7 @@ export default function StatistcsComponent() {
     }, []);
 
     return (
-        <Row className='container-statistcs'>
+        <Row ref={ref} className='container-statistcs'>
             <Col className='after' style={{ display: "grid", placeItems: 'center', width: "300px" }}>
                 <Row><FaClipboardList color='#F3941E' size={45}></FaClipboardList></Row>
                 <Row><h2 style={{ fontSize: "45px", color: "#808080" }}>+ {soluctions}</h2></Row>
