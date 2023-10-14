@@ -30,7 +30,7 @@ export default function CarrusselSolutions() {
             <div>
                 <div className="box-carrussel">
                     <Row style={{ width: "110px", height: '110px', border: "3px solid #fff", borderRadius: "50%", display: "grid", placeItems: "center" }}>
-                        <img width="50" height="50" src="https://img.icons8.com/ios/50/000000/security-shield-green.png" alt="security-shield-green" />                    </Row>
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/ffffff/security-shield-green.png" alt="security-shield-green" />                    </Row>
                     <Row><Typography.Title level={2} style={{ color: "#fff", textAlign: 'center' }}>Crimes e Fraudes digitais</Typography.Title></Row>
                 </div>
             </div>

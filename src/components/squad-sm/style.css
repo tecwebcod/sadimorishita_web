@@ -1,0 +1,66 @@
+.container-squad-sm {
+    width: calc(100% - 100px);
+    margin-left: 100px;
+    display: flex;
+}
+
+.squad-sm-text {
+    display: grid;
+    place-items: center;
+    width: 50%;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.btn-conheca-nosso-time {
+    width: 250px;
+    height: 50px;
+    background-color: #FF9C22;
+    border: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.squad-sm-ceos {
+    width: 50%;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.squad-sm-box-socios {
+    width: 300px;
+    height: 100%;
+    overflow-x: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    scroll-behavior: smooth;
+}
+
+.socio {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    gap: 10px;
+    align-items:center;
+}
+
+.btn-prev {
+    position: absolute;
+    left: 150px;
+    background: transparent;
+    border: 0;
+}
+
+.btn-next {
+    position: absolute;
+    right: 150px;
+    background: transparent;
+    border: 0;
+}

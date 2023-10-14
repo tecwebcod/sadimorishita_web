@@ -4,6 +4,7 @@ import { Content } from 'antd/es/layout/layout'
 import Titles from '../../components/titles'
 import StatistcsComponent from '../../components/statistcs'
 import CarrusselSolutions from '../../components/carrusselSolutions'
+import SquadSM from '../../components/squad-sm'
 
 export default function Home() {
 
@@ -20,6 +21,9 @@ export default function Home() {
       <Titles text={'Nossas'} textExtra={'Soluções'} color='#F3941E' sizeImage='0px'></Titles>
       <CarrusselSolutions></CarrusselSolutions>
 
+      <div className="section-squad-sm">
+        <SquadSM></SquadSM>
+      </div>
     </div>
   )
 }
