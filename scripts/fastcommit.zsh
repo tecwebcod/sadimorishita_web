@@ -1,1 +1,1 @@
-yarn build & git pull & git add . & git commit -m'update' & git push
+yarn build && git pull && git add . && git commit -m'update' && git push
