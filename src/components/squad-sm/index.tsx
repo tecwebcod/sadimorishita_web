@@ -1,8 +1,9 @@
-import { BsLinkedin } from 'react-icons/bs'
 import Titles from '../titles'
 import './style.css'
 import { Col, Row } from 'antd'
 import { BiLogoLinkedin } from 'react-icons/bi'
+import { IoIosMail } from 'react-icons/io'
+import { FaUser } from 'react-icons/fa'
 
 export default function SquadSM() {
 
@@ -15,16 +16,16 @@ export default function SquadSM() {
             redes: [
                 {
                     linkedin: "",
-                    icon: <BiLogoLinkedin color="#000" size={20}></BiLogoLinkedin>
+                    icon: <BiLogoLinkedin color="#fff" size={30}></BiLogoLinkedin>
 
                 },
                 {
                     email: "",
-                    icon: <BsLinkedin></BsLinkedin>
+                    icon: <IoIosMail color='#fff' size={30}></IoIosMail>
                 },
                 {
                     moreIformations: "",
-                    icon: <BsLinkedin></BsLinkedin>
+                    icon: <FaUser color='#fff' size={30}></FaUser>
                 }
             ]
         },
@@ -36,16 +37,16 @@ export default function SquadSM() {
             redes: [
                 {
                     linkedin: "",
-                    icon: <BiLogoLinkedin color="#000" size={20}></BiLogoLinkedin>
+                    icon: <BiLogoLinkedin color="#fff" size={30}></BiLogoLinkedin>
 
                 },
                 {
                     email: "",
-                    icon: <BsLinkedin></BsLinkedin>
+                    icon: <IoIosMail color='#fff' size={30}></IoIosMail>
                 },
                 {
                     moreIformations: "",
-                    icon: <BsLinkedin></BsLinkedin>
+                    icon: <FaUser color='#fff' size={30}></FaUser>
                 }
             ]
         }
@@ -85,11 +86,18 @@ export default function SquadSM() {
                                         <img width={'300px'} style={{ borderRadius: "40px" }} src={socios?.image} alt="" />
                                         <h1 style={{ color: "#343953" }}>{socios?.name}</h1>
                                         <p style={{ fontSize: "20px", color: 'grey', marginBottom: "10px" }}>{socios?.function}</p>
-                                        <Row>
+                                        <Row style={{ gap: "10px" }}>
                                             {
                                                 socios?.redes?.map((rede, index) => {
                                                     return (
-                                                        <Row key={index}>
+                                                        <Row key={index} style={{
+                                                            width: "50px",
+                                                            height: "50px",
+                                                            borderRadius: "50%",
+                                                            background: "#7C7C7C",
+                                                            display: 'grid',
+                                                            placeItems: "center",
+                                                        }}>
                                                             <Col>
                                                                 {rede?.icon}
                                                             </Col>

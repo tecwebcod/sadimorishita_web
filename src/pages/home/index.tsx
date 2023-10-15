@@ -5,6 +5,7 @@ import Titles from '../../components/titles'
 import StatistcsComponent from '../../components/statistcs'
 import CarrusselSolutions from '../../components/carrusselSolutions'
 import SquadSM from '../../components/squad-sm'
+import NoticesComponent from '../../components/notices'
 
 export default function Home() {
 
@@ -23,6 +24,7 @@ export default function Home() {
 
       <div className="section-squad-sm">
         <SquadSM></SquadSM>
+        <NoticesComponent></NoticesComponent>
       </div>
     </div>
   )
