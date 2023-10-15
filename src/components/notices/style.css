@@ -1,5 +1,5 @@
 .container-notices {
-    width: calc(100% -100px);
+    width: calc(100% - 100px);
     margin-left: 100px;
     display: grid;
     place-items: center;
