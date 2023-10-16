@@ -13,17 +13,19 @@ export default function StatistcsComponent() {
 
     const ref = useRef<HTMLDivElement | null>(null)
 
+    let counter1 = 0;
+    let counter2 = 0;
+    let counter3 = 0;
 
     useEffect(() => {
-        let counter1 = 0;
-        let counter2 = 0;
-        let counter3 = 0;
-   
 
         const onScroll = () => {
             if (!ref.current) {
                 return
             }
+            counter1 = 0;
+            counter2 = 0;
+            counter3 = 0;
             const top = ref.current.getBoundingClientRect().top;
             const bottom = ref.current.getBoundingClientRect().bottom;
 
@@ -39,42 +41,41 @@ export default function StatistcsComponent() {
         };
         window.addEventListener('scroll', onScroll);
 
+            const interval = setInterval(() => {
+                if (counter1 <= 14) {
+                    setSoluctions(counter1);
+                    counter1++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 500);
 
-        const interval = setInterval(() => {
-            if (counter1 <= 14) {
-                setSoluctions(counter1);
-                counter1++;
-            } else {
+            const interval2 = setInterval(() => {
+                if (counter2 <= 302) {
+                    setClients(counter2);
+                    counter2++;
+                } else {
+                    clearInterval(interval2);
+                }
+
+            }, 20)
+            const interval3 = setInterval(() => {
+                if (counter3 <= 6) {
+                    setHistory(counter3);
+                    counter3++;
+                } else {
+                    clearInterval(interval3);
+                }
+
+            }, 500)
+            return () => {
+                window.removeEventListener('scroll', onScroll)
                 clearInterval(interval);
-            }
-        }, 500);
-
-        const interval2 = setInterval(() => {
-            if (counter2 <= 302) {
-                setClients(counter2);
-                counter2++;
-            } else {
                 clearInterval(interval2);
-            }
-
-        }, 20)
-        const interval3 = setInterval(() => {
-            if (counter3 <= 6) {
-                setHistory(counter3);
-                counter3++;
-            } else {
                 clearInterval(interval3);
-            }
-
-        }, 500)
-        return () => {
-            window.removeEventListener('scroll', onScroll)
-            clearInterval(interval);
-            clearInterval(interval2);
-            clearInterval(interval3);
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+            };
+        
+    }, [counter1, counter2, counter3]);
 
     return (
         <Row ref={ref} className='container-statistcs'>

@@ -79,9 +79,9 @@ export default function SquadSM() {
                 }} className='btn-next'><img width="50" height="50" src="https://img.icons8.com/ios/50/forward--v1.png" alt="forward--v1" /></button>
                 <div className="squad-sm-box-socios">
                     {
-                        socios.map((socios) => {
+                        socios.map((socios, index) => {
                             return (
-                                <div style={{ width: '300px' }}>
+                                <div key={index} style={{ width: '300px' }}>
                                     <div key={socios.id} className="socio">
                                         <img width={'300px'} style={{ borderRadius: "40px" }} src={socios?.image} alt="" />
                                         <h1 style={{ color: "#343953" }}>{socios?.name}</h1>
